@@ -13,6 +13,12 @@
 		7A39329F1AA1400F007F161E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A39329E1AA1400F007F161E /* Images.xcassets */; };
 		7A3932A21AA1400F007F161E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A3932A01AA1400F007F161E /* LaunchScreen.xib */; };
 		7A3932AE1AA1400F007F161E /* SampleKeyboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3932AD1AA1400F007F161E /* SampleKeyboardTests.swift */; };
+		7A3932B81AA14057007F161E /* NumericKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3932B71AA14057007F161E /* NumericKeyboardView.swift */; };
+		7A3932BA1AA14075007F161E /* NumericKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A3932B91AA14075007F161E /* NumericKeyboardView.xib */; };
+		7A3932BC1AA1B558007F161E /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3932BB1AA1B558007F161E /* RoundButton.swift */; };
+		7A3932BE1AA1B744007F161E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A3932BD1AA1B744007F161E /* QuartzCore.framework */; };
+		7A3932C11AA1C8FB007F161E /* Hypno.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A3932BF1AA1C8FB007F161E /* Hypno.png */; };
+		7A3932C21AA1C8FB007F161E /* Hypno@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A3932C01AA1C8FB007F161E /* Hypno@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +42,12 @@
 		7A3932A71AA1400F007F161E /* SampleKeyboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleKeyboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A3932AC1AA1400F007F161E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A3932AD1AA1400F007F161E /* SampleKeyboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleKeyboardTests.swift; sourceTree = "<group>"; };
+		7A3932B71AA14057007F161E /* NumericKeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericKeyboardView.swift; sourceTree = "<group>"; };
+		7A3932B91AA14075007F161E /* NumericKeyboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NumericKeyboardView.xib; sourceTree = "<group>"; };
+		7A3932BB1AA1B558007F161E /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		7A3932BD1AA1B744007F161E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7A3932BF1AA1C8FB007F161E /* Hypno.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hypno.png; sourceTree = "<group>"; };
+		7A3932C01AA1C8FB007F161E /* Hypno@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hypno@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A3932BE1AA1B744007F161E /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +72,7 @@
 		7A3932891AA1400F007F161E = {
 			isa = PBXGroup;
 			children = (
+				7A3932BD1AA1B744007F161E /* QuartzCore.framework */,
 				7A3932941AA1400F007F161E /* SampleKeyboard */,
 				7A3932AA1AA1400F007F161E /* SampleKeyboardTests */,
 				7A3932931AA1400F007F161E /* Products */,
@@ -77,8 +91,13 @@
 		7A3932941AA1400F007F161E /* SampleKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				7A3932BF1AA1C8FB007F161E /* Hypno.png */,
+				7A3932C01AA1C8FB007F161E /* Hypno@2x.png */,
 				7A3932971AA1400F007F161E /* AppDelegate.swift */,
 				7A3932991AA1400F007F161E /* ViewController.swift */,
+				7A3932BB1AA1B558007F161E /* RoundButton.swift */,
+				7A3932B71AA14057007F161E /* NumericKeyboardView.swift */,
+				7A3932B91AA14075007F161E /* NumericKeyboardView.xib */,
 				7A39329B1AA1400F007F161E /* Main.storyboard */,
 				7A39329E1AA1400F007F161E /* Images.xcassets */,
 				7A3932A01AA1400F007F161E /* LaunchScreen.xib */,
@@ -195,6 +214,9 @@
 				7A39329D1AA1400F007F161E /* Main.storyboard in Resources */,
 				7A3932A21AA1400F007F161E /* LaunchScreen.xib in Resources */,
 				7A39329F1AA1400F007F161E /* Images.xcassets in Resources */,
+				7A3932C21AA1C8FB007F161E /* Hypno@2x.png in Resources */,
+				7A3932BA1AA14075007F161E /* NumericKeyboardView.xib in Resources */,
+				7A3932C11AA1C8FB007F161E /* Hypno.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +234,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A3932BC1AA1B558007F161E /* RoundButton.swift in Sources */,
+				7A3932B81AA14057007F161E /* NumericKeyboardView.swift in Sources */,
 				7A39329A1AA1400F007F161E /* ViewController.swift in Sources */,
 				7A3932981AA1400F007F161E /* AppDelegate.swift in Sources */,
 			);
