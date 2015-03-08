@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, NumericKeyboardViewDelegate {
 
     @IBOutlet weak var numericKeyboard: NumericKeyboardView!
     
@@ -36,6 +36,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         self.numericKeyboard.layer.position = CGPointMake(160.0, 160.0)
         self.numericKeyboard.hidden = true
+        self.numericKeyboard.delegate = self
 
     }
 
@@ -44,44 +45,49 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-//    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-//        var t: AnyObject = touches.anyObject()!
-//        var p = t.locationInView(self.view)
-//        if (self.numericKeyboard.frame.origin.x < p.x &&
-//            self.numericKeyboard.frame.origin.x + self.numericKeyboard.frame.size.width > p.x &&
-//            self.numericKeyboard.frame.origin.y < p.y &&
-//            self.numericKeyboard.frame.origin.y + self.numericKeyboard.frame.size.height > p.y) {
-//            self.numericKeyboard.layer.position = p
-//        }
-//    }
-//    
-//    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
-//        var t: AnyObject = touches.anyObject()!
-//        var p = t.locationInView(self.view)
-//        if (self.numericKeyboard.frame.origin.x < p.x &&
-//            self.numericKeyboard.frame.origin.x + self.numericKeyboard.frame.size.width > p.x &&
-//            self.numericKeyboard.frame.origin.y < p.y &&
-//            self.numericKeyboard.frame.origin.y + self.numericKeyboard.frame.size.height > p.y) {
-//                self.numericKeyboard.layer.position = p
-//        }
-//    }
-//    
-//    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
-//        var t: AnyObject = touches.anyObject()!
-//        var p = t.locationInView(self.view)
-//        if (self.numericKeyboard.frame.origin.x < p.x &&
-//            self.numericKeyboard.frame.origin.x + self.numericKeyboard.frame.size.width > p.x &&
-//            self.numericKeyboard.frame.origin.y < p.y &&
-//            self.numericKeyboard.frame.origin.y + self.numericKeyboard.frame.size.height > p.y) {
-//                self.numericKeyboard.layer.position = p
-//        }
-//    }
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        var t: AnyObject = touches.anyObject()!
+        var p = t.locationInView(self.view)
+        println("\(p), \(self.numericKeyboard.frame)")
+
+        if (self.numericKeyboard.frame.origin.x < p.x && p.x < CGRectGetMaxX(self.numericKeyboard.frame) &&
+            self.numericKeyboard.frame.origin.y < p.y && p.y < self.numericKeyboard.frame.origin.y + 40) {
+            self.numericKeyboard.layer.position = p
+        }
+    }
+    
+    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
+        var t: AnyObject = touches.anyObject()!
+        var p = t.locationInView(self.view)
+        if (self.numericKeyboard.frame.origin.x < p.x && p.x < CGRectGetMaxX(self.numericKeyboard.frame) &&
+            self.numericKeyboard.frame.origin.y < p.y && p.y < self.numericKeyboard.frame.origin.y + 40) {
+                self.numericKeyboard.layer.position = p
+        }
+    }
+    
+    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+        var t: AnyObject = touches.anyObject()!
+        var p = t.locationInView(self.view)
+        println(p)
+
+        if (self.numericKeyboard.frame.origin.x < p.x && p.x < CGRectGetMaxX(self.numericKeyboard.frame) &&
+            self.numericKeyboard.frame.origin.y < p.y && p.y < self.numericKeyboard.frame.origin.y + 40) {
+                self.numericKeyboard.layer.position = p
+        }
+    }
     
     // MARK: -
     func textFieldDidBeginEditing(textField: UITextField) {
     
         textField.resignFirstResponder()
         self.numericKeyboard.hidden = false
+        self.numericKeyboard.center = self.view.center
     }
+    
+    func enterButtonDidPushed(resultLabelString: String?) {
+        myTextField.text = resultLabelString
+        self.numericKeyboard.hidden = true
+    }
+    
 }
 

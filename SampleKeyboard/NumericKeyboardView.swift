@@ -17,9 +17,14 @@ enum Operation {
     case None
 }
 
+protocol NumericKeyboardViewDelegate {
+    func enterButtonDidPushed(resultLabelString: String?)
+}
+
 class NumericKeyboardView: UIView {
 
     var view: UIView!
+    var delegate: NumericKeyboardViewDelegate! = nil
     
     @IBOutlet weak var display: UILabel!
     
@@ -28,6 +33,7 @@ class NumericKeyboardView: UIView {
     var nextOperation = Operation.None
     var shouldCompute = false
 
+    @IBOutlet weak var numberLabel: RoundLabel!
     func xibSetup() {
         view = loadViewFromNib()
         
@@ -149,6 +155,11 @@ class NumericKeyboardView: UIView {
             shouldCompute = false
         }
     }
+    
+    @IBAction func enterButtonDidPush(sender: AnyObject) {
+        self.delegate.enterButtonDidPushed(display.text)
+    }
+    
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

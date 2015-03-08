@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SampleKeyboard/NumericKeyboardView.swift"
-            timestampString = "447426056.690226"
+            timestampString = "447428074.802997"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "didTapOperation(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SampleKeyboard/NumericKeyboardView.swift"
-            timestampString = "447426056.690226"
+            timestampString = "447428074.802997"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "didTapOperation(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SampleKeyboard/NumericKeyboardView.swift"
-            timestampString = "447424950.842022"
+            timestampString = "447428074.802997"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "computeLastOperation()"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,12 +58,74 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SampleKeyboard/NumericKeyboardView.swift"
-            timestampString = "447425407.215033"
+            timestampString = "447428074.802997"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "computeLastOperation()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SampleKeyboard/ViewController.swift"
+            timestampString = "447430654.390143"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "touchesBegan(_:withEvent:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SampleKeyboard.ViewController.touchesBegan (SampleKeyboard.ViewController)(ObjectiveC.NSSet, withEvent : ObjectiveC.UIEvent) -&gt; ()"
+                  moduleName = "SampleKeyboard"
+                  urlString = "file:///Users/TFuruyama/Documents/workspace/201502/SampleKeyboard/SampleKeyboard/ViewController.swift"
+                  timestampString = "447430654.914013"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "341">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SampleKeyboard.ViewController.touchesBegan (SampleKeyboard.ViewController)(ObjectiveC.NSSet, withEvent : ObjectiveC.UIEvent) -&gt; ()"
+                  moduleName = "SampleKeyboard"
+                  urlString = "file:///Users/TFuruyama/Documents/workspace/201502/SampleKeyboard/SampleKeyboard/ViewController.swift"
+                  timestampString = "447430654.914233"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "2588">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SampleKeyboard/ViewController.swift"
+            timestampString = "447430666.767403"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "touchesBegan(_:withEvent:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
