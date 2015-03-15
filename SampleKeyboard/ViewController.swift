@@ -14,7 +14,9 @@ class ViewController: UIViewController, UITextFieldDelegate, NumericKeyboardView
     
     @IBOutlet weak var myTextField: UITextField!
     
+    
     var boxlayer :CALayer!
+    var initPosition :CGPoint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,36 +47,36 @@ class ViewController: UIViewController, UITextFieldDelegate, NumericKeyboardView
         // Dispose of any resources that can be recreated.
     }
 
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        var t: AnyObject = touches.anyObject()!
-        var p = t.locationInView(self.view)
-        println("\(p), \(self.numericKeyboard.frame)")
-
-        if (self.numericKeyboard.frame.origin.x < p.x && p.x < CGRectGetMaxX(self.numericKeyboard.frame) &&
-            self.numericKeyboard.frame.origin.y < p.y && p.y < self.numericKeyboard.frame.origin.y + 40) {
-            self.numericKeyboard.layer.position = p
-        }
-    }
-    
-    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
-        var t: AnyObject = touches.anyObject()!
-        var p = t.locationInView(self.view)
-        if (self.numericKeyboard.frame.origin.x < p.x && p.x < CGRectGetMaxX(self.numericKeyboard.frame) &&
-            self.numericKeyboard.frame.origin.y < p.y && p.y < self.numericKeyboard.frame.origin.y + 40) {
-                self.numericKeyboard.layer.position = p
-        }
-    }
-    
-    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
-        var t: AnyObject = touches.anyObject()!
-        var p = t.locationInView(self.view)
-        println(p)
-
-        if (self.numericKeyboard.frame.origin.x < p.x && p.x < CGRectGetMaxX(self.numericKeyboard.frame) &&
-            self.numericKeyboard.frame.origin.y < p.y && p.y < self.numericKeyboard.frame.origin.y + 40) {
-                self.numericKeyboard.layer.position = p
-        }
-    }
+//    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+//        var t: AnyObject = touches.anyObject()!
+//        var p = t.locationInView(self.view)
+//        println("\(p), \(self.numericKeyboard.frame)")
+//
+//        if (self.numericKeyboard.frame.origin.x < p.x && p.x < CGRectGetMaxX(self.numericKeyboard.frame) &&
+//            self.numericKeyboard.frame.origin.y < p.y && p.y < self.numericKeyboard.frame.origin.y + 40) {
+//            self.numericKeyboard.layer.position = p
+//        }
+//    }
+//    
+//    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
+//        var t: AnyObject = touches.anyObject()!
+//        var p = t.locationInView(self.view)
+//        if (self.numericKeyboard.frame.origin.x < p.x && p.x < CGRectGetMaxX(self.numericKeyboard.frame) &&
+//            self.numericKeyboard.frame.origin.y < p.y && p.y < self.numericKeyboard.frame.origin.y + 40) {
+//                self.numericKeyboard.layer.position = p
+//        }
+//    }
+//    
+//    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+//        var t: AnyObject = touches.anyObject()!
+//        var p = t.locationInView(self.view)
+//        println(p)
+//
+//        if (self.numericKeyboard.frame.origin.x < p.x && p.x < CGRectGetMaxX(self.numericKeyboard.frame) &&
+//            self.numericKeyboard.frame.origin.y < p.y && p.y < self.numericKeyboard.frame.origin.y + 40) {
+//                self.numericKeyboard.layer.position = p
+//        }
+//    }
     
     // MARK: -
     func textFieldDidBeginEditing(textField: UITextField) {
@@ -89,5 +91,43 @@ class ViewController: UIViewController, UITextFieldDelegate, NumericKeyboardView
         self.numericKeyboard.hidden = true
     }
     
+    @IBAction func dragGesture(sender: UIPanGestureRecognizer) {
+        
+        if (sender.view?.bounds.origin.y < 20) {
+        println("y=\(sender.view?.bounds.origin.y)")
+        
+        
+        if(sender.state == UIGestureRecognizerState.Began) {
+            // ドラッグオブジェクトの初期値を覚えておく
+            self.initPosition = sender.view?.center;
+            
+            // 事前にUse Auto Layoutは外しておくこと
+            self.view.bringSubviewToFront(sender.view!)
+            sender.view?.alpha = 0.8
+
+        }
+
+        
+        // 移動量を取得
+        let point = sender.translationInView(self.view)
+        let view = self.view!
+        
+        // 移動量をドラッグしたViewの中心値に加える
+        let movedPoint = CGPointMake(view.center.x + point.x, view.center.y + point.y)
+        
+        // ドラッグで移動した距離を初期化する
+        sender.setTranslation(CGPointZero, inView: self.view)
+        
+        if(sender.state == UIGestureRecognizerState.Ended
+            || sender.state == UIGestureRecognizerState.Failed
+            || sender.state == UIGestureRecognizerState.Cancelled) {
+                // ドラッグするためにタップしている座標を取得
+                let dropPoint = sender.locationInView(self.view)
+                
+                sender.view?.center = dropPoint
+                sender.view?.alpha = 1.0
+        }
+        }
+    }
 }
 
